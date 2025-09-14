@@ -1,38 +1,47 @@
-Air Quality Detection and Prediction Project
-Project Overview
-This repository contains a comprehensive data science project focused on detecting and predicting air quality. The primary goal is to demonstrate a robust and reproducible machine learning workflow, with a strong emphasis on data preprocessing and exploratory data analysis.
+# Air Quality Detection and Prediction
 
-The project is structured as a step-by-step guide, making it an excellent resource for anyone looking to understand and implement a real-world data science pipeline. The final output is a cleaned, feature-engineered dataset ready for building a predictive model for the Air Quality Index (AQI).
+## Project Overview
+This project detects and predicts air quality levels using machine learning. It demonstrates data preprocessing, feature engineering, and predictive modeling. The final goal is to build a model that predicts the Air Quality Index (AQI).
 
-📊 Dataset
-The dataset used in this project is city_day.csv, a publicly available dataset from the Kaggle Air Quality in India competition. It includes daily measurements for various cities, with key attributes such as:
+## Dataset
+- Source: Kaggle – Air Quality in India
+- File: city_day.csv
+- Attributes:
+  - City
+  - Date
+  - PM2.5, PM10, NO2, SO2, CO, O3
+  - AQI
 
-City
+## Methodology
+1. Data Cleaning
+   - Standardized column names
+   - Removed duplicates and irrelevant rows
+2. Missing Value Handling
+   - Filled missing values using city-wise and temporal medians
+3. Feature Engineering
+   - Extracted year, month, and day of week
+   - Created rolling averages (3-day, 7-day)
+4. Model Building
+   - Tested Linear Regression, Random Forest, XGBoost
+   - Selected best performing model
 
-Date
+## Data Visualizations
+- Heatmap for missing values
+- Line plots for AQI trends
+- Correlation matrix for pollutant relationships
 
-Concentrations of major pollutants (PM2.5, PM10, NO2, SO2, CO, O3)
+## Web Application
+- Backend: Flask (app.py)
+- Frontend: React (App.jsx)
+- Users enter pollutant values, model predicts AQI
 
-The final AQI score
+## Project Structure
+- app.py : Flask backend
+- App.jsx : React frontend
+- AirQualityDetection.ipynb : Data preprocessing and model
+- city_day.csv : Dataset
+- requirements.txt : Dependencies
+- README.md : Documentation
 
-🛠️ Preprocessing and Feature Engineering
-The AirQualityDetection.ipynb notebook meticulously documents all the data processing steps. Key methodologies applied include:
-
-Data Cleaning: Standardizing column names, handling duplicates, and removing irrelevant rows.
-
-Missing Value Imputation: Implementing a hierarchical imputation strategy that fills missing values based on city-specific and temporal medians.
-
-Feature Engineering: Creating new, relevant features from existing data, such as:
-
-Temporal Features: Extracting year, month, and day_of_week from the date.
-
-Trend Features: Calculating 3-day and 7-day rolling means for key pollutants to capture trends.
-
-📈 Data Visualizations
-The notebook includes visualizations that provide deeper insights into the data, such as:
-
-A heatmap to show the distribution of missing values before imputation.
-
-Line plots to visualize AQI trends over time for different cities.
-
-A correlation matrix to identify relationships between different pollutants
+## Conclusion
+This project demonstrates a complete machine learning pipeline for air quality prediction, including data preprocessing, modeling, and deployment.
